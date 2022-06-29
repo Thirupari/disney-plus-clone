@@ -51,6 +51,15 @@ const Header = (props) => {
     });
   }
 
+  const profile=()=>{
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        setUser(user);
+        history.push("/profile");
+      }
+    });
+  }
+
   const handleAuth = () => {
     if (!userName) {
       auth
@@ -115,9 +124,9 @@ const Header = (props) => {
             </a>
           </NavMenu>
           <SignOut>
-            <UserImg src={userPhoto} alt={userName} />
+            <UserImg onClick={profile} src={userPhoto} alt={userName} />
             <DropDown>
-              <span onClick={handleAuth}>Sign out</span>
+              <span onClick={handleAuth}> Sign out</span>
             </DropDown>
           </SignOut>
         </>

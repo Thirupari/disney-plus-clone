@@ -8,6 +8,7 @@ import Original from "./components/Originals"
 import Marvel from "./components/Marvel";
 import About from "./components/About";
 import Movie from "./components/Movie";
+import Profile from "./components/Profile";
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/profile">
+            <Profile />
           </Route>
           <Route path="/detail/:id">
             <Detail />
